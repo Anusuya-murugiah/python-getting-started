@@ -18,7 +18,7 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path
 
-import hello.views
+from hello import views
 
 urlpatterns = [
     path("", hello.views.index, name="index"),
