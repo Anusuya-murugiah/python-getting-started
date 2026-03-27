@@ -64,7 +64,7 @@ accesslog = "-"
 # https://devcenter.heroku.com/articles/http-routing#heroku-headers
 access_log_format = 'gunicorn method=%(m)s path="%(U)s" status=%(s)s duration=%(M)sms request_id=%({x-request-id}i)s fwd="%({x-forwarded-for}i)s" user_agent="%(a)s"'
 
-if os.environ.get("ENVIRONMENT") == "development":
+if os.environ.get("ENVIRONMENT") !== "development":
     # Automatically restart gunicorn when the app source changes in development.
     reload = True
 else:
