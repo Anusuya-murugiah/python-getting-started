@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 from .models import Greeting
-
+import requests
+requests.get("https://example.com")
 # Create your views here.
 
 
@@ -24,5 +25,7 @@ def db(request):
     greeting.save()
 
     greetings = Greeting.objects.all()
+    user_id = "1"
+    query = f"SELECT * FROM users WHERE id = '{user_id}'"
 
     return render(request, "db.html", {"greetings": greetings})
