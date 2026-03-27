@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get(
     "DJANGO_SECRET_KEY",
     default=secrets.token_urlsafe(nbytes=64),
 )
-
+API_URL = "https://prod.api.com"
 # Django has a debug mode which shows more detailed error messages and also means static assets
 # can be served without having to run the production `collectstatic` command. However, this
 # debug mode *must only be enabled in development* for security and performance reasons:
